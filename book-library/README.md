@@ -1,8 +1,4 @@
-# React + Vite
+Capstone Project: Book Library
+Description: A book library application where users can search for books and view details using a books API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Displays a list of books based on user search queries, including book covers, titles, and authors. - Allows users to click on a book to view more details, such as description and publication date.
