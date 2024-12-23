@@ -28,17 +28,19 @@ const BookDetails = () => {
   }
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md">
-      <img 
-        src={`https://covers.openlibrary.org/b/id/${book.cover_i || 'OLID-L.jpg'}-M.jpg`} //replace
-        alt={book.title} 
-        className="w-full h-48 object-cover" 
-      />
-      <h2 className="text-2xl font-bold mb-4">{book.title}</h2>
-      <p className="text-gray-600">by {book.authors?.[0]?.name || 'Unknown Author'}</p>
-      <p className="text-gray-600">Published: {book.publish_date || 'Unknown'}</p>
-      <p className="text-gray-600">Pages: {book.number_of_pages || 'Unknown'}</p>
-      {/* Add more details as needed */}
+    <div className="w-full">
+        <div className="p-4 bg-white rounded-lg shadow-md mx-auto max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
+            <img 
+                src={`https://covers.openlibrary.org/b/id/${book.cover_i || 'OLID-L.jpg'}-M.jpg`} //replace
+                alt={book.title} 
+                className="w-full h-48 object-cover" 
+            />
+            <h2 className="text-2xl font-bold mb-4">{book.title}</h2>
+            <p className="text-gray-600">by {book.authors?.[0]?.name || 'Unknown Author'}</p>
+            <p className="text-gray-600">Published: {book.publish_date || 'Unknown'}</p>
+            <p className="text-gray-600">Pages: {book.number_of_pages || 'Unknown'}</p>
+            {/* Add more details as needed */}
+        </div>
     </div>
   );
 };
