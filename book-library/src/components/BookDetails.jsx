@@ -4,7 +4,8 @@ import axios from 'axios';
 
 const BookDetails = () => {
     const { bookId } = useParams(); 
-  const [book, setBook] = useState(null); 
+    console.log(bookId);
+    const [book, setBook] = useState(null); 
 
   useEffect(() => {
     const fetchBookDetails = async () => {
