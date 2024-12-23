@@ -4,14 +4,14 @@ import axios from 'axios';
 
 const BookDetails = () => {
     const { bookId } = useParams(); 
-    console.log(bookId);
-    const [book, setBook] = useState(null); 
+    const [book, setBook] = useState(null);
 
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
         const response = await axios.get(`https://openlibrary.org/api/books?bibkeys=ISBN:${bookId}&format=json&jscmd=data`);
         setBook(response.data[`ISBN:${bookId}`]); 
+        // console.log(response.data);
       } catch (error) {
         console.error('Error fetching book details:', error);
         // Handle error (e.g., display an error message)
@@ -29,6 +29,11 @@ const BookDetails = () => {
 
   return (
     <div className="p-4 bg-white rounded-lg shadow-md">
+      <img 
+        src={`https://covers.openlibrary.org/b/id/${book.cover_i || 'OLID-L.jpg'}-M.jpg`} //replace
+        alt={book.title} 
+        className="w-full h-48 object-cover" 
+      />
       <h2 className="text-2xl font-bold mb-4">{book.title}</h2>
       <p className="text-gray-600">by {book.authors?.[0]?.name || 'Unknown Author'}</p>
       <p className="text-gray-600">Published: {book.publish_date || 'Unknown'}</p>
