@@ -9,13 +9,13 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex justify-center mb-8">
+    <form onSubmit={handleSubmit} className="flex flex-col items-center mb-8">
       <input
         type="text"
         placeholder="Search for books..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="border border-gray-300 p-2 rounded w-full sm:w-96"
+        className="border border-gray-300 p-2 rounded w-full sm:w-96 mb-8"
       />
       <button
         type="submit"
