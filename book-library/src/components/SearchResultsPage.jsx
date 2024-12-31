@@ -56,13 +56,13 @@ const SearchResultsPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-center mb-8">
-            <img src={logo} alt="Book Library Logo" className="w-24 h-24" /> 
+        <div className="container mx-auto flex flex-col">
+            <img src={logo} alt="Record Reads logo" className="mt-10 w-72 h-20 ml-11 mb-20"/>
         </div>
         <SearchBar onSearch={handleSearch} />
-        <h2 className="text-2xl font-bold mb-4">Search Results for "{query}"</h2>
+        <h2 className="text-2xl font-bold font-Inter mb-20 mt-16">Search Results for "{query}"</h2>
         {noResults && (
-        <div className="text-red-500 font-bold mb-4">
+        <div className="text-black font-bold mb-48 mt-28 text-4xl font-Inter flex-col justify-center text-center mx-auto lg:w-[39rem]">
           OOPS! Looks like we don't have "{query}". Please try a different search term.
         </div>
         )}
@@ -79,7 +79,7 @@ const SearchResultsPage = () => {
             <button onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))} disabled={currentPage === totalPages}>Next</button>
             </div>
         )}
-        <Link to="/">Back to Home</Link>
+        <Link to="/" className="text-[#0084FF]">Back to Home</Link>
         <p>"The world belongs to those who read" - Rick Holland</p>
     </div>
   );
