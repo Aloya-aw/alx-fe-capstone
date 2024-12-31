@@ -11,13 +11,21 @@ const HomePage = () => {
         navigate(`/search?q=${query}`); 
     };
     return (
-    <div className="container mx-auto px-4 py-8">
-        <img src={logo} alt="Record Reads logo" />
-        <img src={background} alt='background image'/>
-        <h1 className="text-3xl font-bold text-center mb-8">Browse the largest collection of books on the internet!</h1>
-        <SearchBar onSearch={handleSearch} /> 
-        <p>"The world belongs to those who read." - Rick Holland</p>
-    </div>
+        <div>
+            <div className="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${background})` }}>
+                <div className="container mx-auto flex flex-col">
+                    <img src={logo} alt="Record Reads logo" className="mt-10 w-72 h-20 ml-11"/>
+                    <div className="w-1440px mx-auto flex flex-col items-center justify-center mb-28 mt-12">
+                        <h1 className="flex w-[830px] h-[339px] flex-col justify-center shrink-0 text-white text-center font-Imprint text-[80px] font-normal leading-[normal] mt-3">Browse the largest collection of books on the internet!</h1>
+                        <SearchBar onSearch={handleSearch} />
+                    </div>
+                </div>   
+            </div>
+            <div className='flex-col justify-center shrink-0 text-black text-center mb-28'>
+                <p className="mt-36 font-Inter text-4xl">"The world belongs to those who read." - Rick Holland</p>
+            </div>
+        </div>
+    
     );
 };
 
