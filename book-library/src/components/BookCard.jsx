@@ -11,9 +11,9 @@ const BookCard = ({ book }) => {  //a functional component that receives a book 
           className="w-full h-44 object-cover" 
         />
         <div className="p-4">
-          <h3 className="text-lg font-bold">{book.title}</h3>
-          <p className="text-gray-600">by {book.author_name?.[0] || 'Unknown Author'}</p>
-          <p className="text-gray-500">Publisher: {book.publishers?.[0] || 'Unknown Publisher'}</p> 
+          <h3 className="text-xl text-[#0084FF] font-bold font-Inter">{book.title}</h3>
+          <p className="text-gray-600 text-[20px] font-Inter">by {book.author_name?.[0] || 'Unknown Author'}</p>
+          <p className="text-gray-500 text-[20px] font-Inter">Publisher: {book.publishers?.[0] || 'Unknown Publisher'}</p> 
           {/* ?.[0] is optional chaining. It safely accesses the first element of the array if it exists, otherwise returns undefined. */}
         </div>
       </Link>

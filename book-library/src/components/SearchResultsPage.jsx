@@ -72,15 +72,17 @@ const SearchResultsPage = () => {
             ))}
         </div>
         {totalPages > 1 && (
-            <div className="pagination mt-4">
+            <div className="pagination mt-4 flex items-center justify-between">
             {/* pagination controls here */}
-            <button onClick={() => handlePageChange(Math.max(currentPage - 1, 1))} disabled={currentPage === 1}>Previous</button>
-            <span>Page {currentPage} of {totalPages}</span>
-            <button onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))} disabled={currentPage === totalPages}>Next</button>
+            <button onClick={() => handlePageChange(Math.max(currentPage - 1, 1))} disabled={currentPage === 1} className='bg-white hover:underline text-[#0084FF] text-xl font-Inter font-bold'>Previous</button>
+            <span className="text-gray-900 text-xl font-Inter">Page {currentPage} of {totalPages}</span>
+            <button onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))} disabled={currentPage === totalPages} className='bg-white hover:underline text-[#0084FF] text-xl font-Inter font-bold'>Next</button>
             </div>
         )}
-        <Link to="/" className="text-[#0084FF]">Back to Home</Link>
-        <p>"The world belongs to those who read" - Rick Holland</p>
+        <Link to="/" className="text-[#0084FF] flex justify-center mt-28 text-2xl font-Inter font-bold hover:underline">Back to Home</Link>
+        <div className='flex-col justify-center shrink-0 text-black text-center mb-28'>
+          <p className="mt-36 font-Inter text-4xl">"The world belongs to those who read" - Rick Holland</p>
+        </div>
     </div>
   );
 };

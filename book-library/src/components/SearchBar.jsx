@@ -15,11 +15,11 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Search for books..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="border border-gray-300 p-2 rounded-xl w-full sm:w-96 mb-8 h-10"
+        className="border border-gray-300 p-2 rounded-xl w-full sm:w-96 mb-8 h-10 focus:outline-none focus:ring focus:ring-[#0084FF] font-Inter"
       />
       <button
         type="submit"
-        className="text-white w-123px h-36px flex-shrink-0 rounded-10px border border-transparent px-6 py-3 text-xl font-bold font-family-inter bg-blue-500 cursor-pointer transition-border-colors duration-200 text-center align-middle flex items-center"
+        className="text-white w-[123px] h-[36px] flex-shrink-0 rounded-[10px] border border-transparent px-8 text-xl font-bold font-Inter bg-[#0084FF] cursor-pointer transition-border-colors duration-200 text-center align-middle flex items-center hover:bg-black"
       >
         Search
       </button>

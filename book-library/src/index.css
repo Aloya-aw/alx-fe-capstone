@@ -12,7 +12,7 @@
   src: url("../assets/Inter_18pt-Regular.ttf")
 }
 :root {
-  font-family: Imprint-MT-Shadow-Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Imprint-MT-Shadow-Regular, Inter;
   line-height: 1.5;
   font-weight: 400;
 
@@ -26,25 +26,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
-}
+} */
 
 body {
   margin: 0;
 }
 
 h1 {
-  font-size: 3.2em;
+  /* font-size: 3.2em; */
   line-height: 1.1;
 }
 
-button {
+/* button {
   width: 123px;
   height: 36px;
   flex-shrink: 0;
@@ -67,7 +67,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 #copyright {
   display: flex;
@@ -85,9 +85,9 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
+  /* a:hover {
     color: #747bff;
-  }
+  } */
   button {
     background-color: #f9f9f9;
   }

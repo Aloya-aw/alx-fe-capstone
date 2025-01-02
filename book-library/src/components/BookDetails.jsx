@@ -45,9 +45,9 @@ const BookDetails = () => {
       : 'https://via.placeholder.com/150x225?text=No+Cover'; // Placeholder image
 
   return (
-    <div className="w-full">
-      <div className="flex justify-center mb-8"> 
-        <img src={Logo} alt="Book Library Logo" className="w-24 h-24" /> 
+    <div className="w-full font-Inter">
+      <div className="container mx-auto flex flex-col">
+        <img src={Logo} alt="Record Reads logo" className="mt-10 w-72 h-20 ml-11 mb-20"/>
       </div>
       <SearchBar />
       <div className="p-4 bg-white rounded-lg shadow-md mx-auto max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
@@ -56,11 +56,11 @@ const BookDetails = () => {
               alt={book.title} 
               className="w-48 h-64 object-cover mr-4"  
           />
-          <h2 className="text-2xl font-bold mb-4">{book.title}</h2>
+          <h2 className="text-5xl font-bold mb-4 mt-4">{book.title}</h2>
           <p className="text-gray-600">by {book.authors?.[0]?.name || 'Unknown Author'}</p>
-          <p className="text-gray-600">Published: {book.publish_date || 'Unknown'}</p>
-          <p className="text-gray-600">Pages: {book.number_of_pages || 'Unknown'}</p>
-          <p className="text-gray-500">ISBN: {bookId}</p> 
+          <p className="mt-4 text-gray-800">{book.description || 'No description available.'}</p>
+          <p className="text-gray-600">ISBN: {bookId}</p>
+          <p className="text-gray-600">Published: {book.publish_date || 'Unknown'}</p> 
           <p className="text-gray-500">Pages: {book.number_of_pages || 'Unknown'}</p>
           <p className="text-gray-500">Subjects: {showMoreSubjects ? allSubjects : displayedSubjects.join(', ')}</p>
           {book.subjects && book.subjects.length > maxSubjectsToDisplay && (
@@ -71,11 +71,11 @@ const BookDetails = () => {
             {showMoreSubjects ? 'Show Less' : 'Show More'}
           </button>
             )}
-          <p className="mt-4">{book.description || 'No description available.'}</p> 
-          {/* Add more details as needed */}
       </div>
-      <Link to="/">Back to Home</Link>
-      <p>"The world belongs to those who read" - Rick Holland</p>
+      <Link to="/" className="text-[#0084FF] flex justify-center mt-28 text-2xl font-Inter font-bold hover:underline">Back to Home</Link>
+      <div className='flex-col justify-center shrink-0 text-black text-center mb-28'>
+        <p className="mt-36 font-Inter text-4xl">"The world belongs to those who read" - Rick Holland</p>
+      </div>
     </div>
   );
 };
