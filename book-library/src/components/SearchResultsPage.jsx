@@ -100,7 +100,7 @@ const SearchResultsPage = () => {
             <div className="pagination mt-4 flex items-center justify-between">
             {/* pagination controls here */}
             <button onClick={() => handlePageChange(Math.max(currentPage - 1, 1))} disabled={currentPage === 1} className='bg-white dark:bg-[#101720] hover:underline text-[#0084FF] text-xl font-Inter font-bold'>Previous</button>
-            <span className="text-gray-900 text-xl font-Inter">Page {currentPage} of {totalPages}</span>
+            <span className="text-gray-900 text-xl font-Inter dark:text-[#f8f8ff]">Page {currentPage} of {totalPages}</span>
             <button onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))} disabled={currentPage === totalPages} className='bg-white dark:bg-[#101720] hover:underline text-[#0084FF] text-xl font-Inter font-bold'>Next</button>
             </div>
         )}
