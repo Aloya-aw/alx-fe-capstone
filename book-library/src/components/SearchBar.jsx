@@ -19,7 +19,7 @@ const SearchBar = ({ onSearch }) => {
       />
       <button
         type="submit"
-        className="text-white w-[123px] h-[36px] flex-shrink-0 rounded-[10px] border border-transparent px-8 text-xl font-bold font-Inter bg-[#0084FF] cursor-pointer transition-border-colors duration-200 text-center align-middle flex items-center hover:bg-black"
+        className="text-white dark:text-[#101720] w-[123px] h-[36px] flex-shrink-0 rounded-[10px] border border-transparent px-8 text-xl font-bold font-Inter bg-[#0084FF] cursor-pointer transition-border-colors duration-200 text-center align-middle flex items-center hover:bg-black"
       >
         Search
       </button>

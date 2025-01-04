@@ -2,6 +2,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  body {
+    @apply bg-white dark:bg-[#101720]; 
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #FFFFFF;
+  }
+  /* a:hover {
+    color: #747bff;
+  } */
+  button {
+    background-color: #f9f9f9;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: #101720;
+  }
+  #copyright {
+    color: white;
+  }
+}
 
 @font-face {
   font-family: "Imprint-MT-Shadow-Regular";
@@ -79,16 +104,4 @@ button:focus-visible {
   font-size: 0.9375rem;
   font-style: normal;
   align-items: center;
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  /* a:hover {
-    color: #747bff;
-  } */
-  button {
-    background-color: #f9f9f9;
-  }
 }

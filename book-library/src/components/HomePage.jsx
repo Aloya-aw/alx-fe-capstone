@@ -21,7 +21,7 @@ const HomePage = () => {
                     </div>
                 </div>   
             </div>
-            <div className='flex-col justify-center shrink-0 text-black text-center mb-28 md:w-[685px] md:mx-auto'>
+            <div className='flex-col justify-center shrink-0 text-black dark:text-white text-center mb-28 md:w-[685px] md:mx-auto'>
                 <p className="mt-36 font-Inter text-4xl">"The world belongs to those who read." - Rick Holland</p>
             </div>
         </div>

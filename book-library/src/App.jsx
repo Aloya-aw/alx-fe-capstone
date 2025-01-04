@@ -7,7 +7,7 @@ import BookDetails from './components/BookDetails';
 function App() {
   return (
     <Router>
-      <div className="bg-white min-h-screen w-full"> 
+      <div className="bg-white dark:bg-[#101720] min-h-screen w-full"> 
         <Routes>
           <Route path="/" element={<HomePage />} /> 
           <Route path="/search" element={<SearchResultsPage />} /> 

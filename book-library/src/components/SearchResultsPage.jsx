@@ -73,14 +73,14 @@ const SearchResultsPage = () => {
             <img src={logo} alt="Record Reads logo" className="mt-10 w-72 h-20 sm:ml-11 mb-20 mx-auto"/>
         </div>
         <SearchBar onSearch={handleSearch} />
-        <h2 className="text-2xl font-bold font-Inter mb-20 mt-16">Search Results for "{query}"</h2>
+        <h2 className="text-2xl font-bold font-Inter mb-20 mt-16 text-black dark:text-white">Search Results for "{query}"</h2>
         {isLoading && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
           <Spinner />
         </div>
       )}
         {noResults && !isLoading && ( // Check for no results and not loading
-        <div className="text-black font-bold mb-48 mt-28 text-4xl font-Inter flex-col justify-center text-center mx-auto lg:w-[39rem]">
+        <div className="text-black dark:text-white font-bold mb-48 mt-28 text-4xl font-Inter flex-col justify-center text-center mx-auto lg:w-[39rem]">
           OOPS! Looks like we don't have "{query}". Please try a different search term.
         </div>
         )}
@@ -99,13 +99,13 @@ const SearchResultsPage = () => {
         {totalPages > 1 && !isLoading && ( // Only render pagination if not loading
             <div className="pagination mt-4 flex items-center justify-between">
             {/* pagination controls here */}
-            <button onClick={() => handlePageChange(Math.max(currentPage - 1, 1))} disabled={currentPage === 1} className='bg-white hover:underline text-[#0084FF] text-xl font-Inter font-bold'>Previous</button>
+            <button onClick={() => handlePageChange(Math.max(currentPage - 1, 1))} disabled={currentPage === 1} className='bg-white dark:bg-[#101720] hover:underline text-[#0084FF] text-xl font-Inter font-bold'>Previous</button>
             <span className="text-gray-900 text-xl font-Inter">Page {currentPage} of {totalPages}</span>
-            <button onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))} disabled={currentPage === totalPages} className='bg-white hover:underline text-[#0084FF] text-xl font-Inter font-bold'>Next</button>
+            <button onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))} disabled={currentPage === totalPages} className='bg-white dark:bg-[#101720] hover:underline text-[#0084FF] text-xl font-Inter font-bold'>Next</button>
             </div>
         )}
         <Link to="/" className="text-[#0084FF] flex justify-center mt-28 text-2xl font-Inter font-bold hover:underline">Back to Home</Link>
-        <div className='flex-col justify-center shrink-0 text-black text-center mb-28'>
+        <div className='flex-col justify-center shrink-0 text-black dark:text-white text-center mb-28'>
           <p className="mt-36 font-Inter text-4xl">"The world belongs to those who read" - Rick Holland</p>
         </div>
     </div>

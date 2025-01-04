@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'; //to create a link to the /book/:bookId
 
 const BookCard = ({ book }) => {  //a functional component that receives a book object as a prop
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-200">
+    <div className="bg-white dark:bg-[#101720] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-200">
       <Link to={`/book/${book.isbn[0]}`}> 
         <img 
           src={`https://covers.openlibrary.org/b/id/${book.cover_i || 'OLID-L.jpg'}-M.jpg`}

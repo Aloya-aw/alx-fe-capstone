@@ -61,7 +61,7 @@ const BookDetails = () => {
         <img src={Logo} alt="Record Reads logo" className="mt-10 w-72 h-20 sm:ml-11 mb-20 mx-auto"/>
       </div>
       <SearchBar onSearch={handleSearch}/>
-      <div className="p-4 bg-white rounded-lg shadow-md mx-auto max-w-lg sm:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
+      <div className="p-4 bg-white dark:bg-[#101720] rounded-lg shadow-md mx-auto max-w-lg sm:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
           <img 
               src={coverImageUrl}
               alt={book.title} 
@@ -84,7 +84,7 @@ const BookDetails = () => {
             )}
       </div>
       <Link to="/" className="text-[#0084FF] flex justify-center mt-28 text-2xl font-Inter font-bold hover:underline">Back to Home</Link>
-      <div className='flex-col justify-center shrink-0 text-black text-center mb-28'>
+      <div className='flex-col justify-center shrink-0 text-black dark:text-white text-center mb-28'>
         <p className="mt-36 font-Inter text-4xl">"The world belongs to those who read" - Rick Holland</p>
       </div>
     </div>
