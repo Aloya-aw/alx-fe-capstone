@@ -3,7 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom'; // To access search qu
 import axios from 'axios';
 import BookCard from './BookCard';
 import SearchBar from './SearchBar';
-import logo from '../assets/logo.png';
+import Logo from '../assets/Logo.png';
 import Spinner from './Spinner';
 import HomePage from './HomePage';
 
@@ -70,7 +70,7 @@ const SearchResultsPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
         <div className="container mx-auto flex flex-col">
-            <img src={logo} alt="Record Reads logo" className="mt-10 w-72 h-20 sm:ml-11 mb-20 mx-auto"/>
+            <img src={Logo} alt="Record Reads logo" className="mt-10 w-72 h-20 sm:ml-11 mb-20 mx-auto"/>
         </div>
         <SearchBar onSearch={handleSearch} />
         <h2 className="text-2xl font-bold font-Inter mb-20 mt-16 text-black dark:text-white">Search Results for "{query}"</h2>
