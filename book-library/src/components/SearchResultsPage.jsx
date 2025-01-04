@@ -4,6 +4,7 @@ import axios from 'axios';
 import BookCard from './BookCard';
 import SearchBar from './SearchBar';
 import logo from '../assets/logo.png';
+import Spinner from './Spinner';
 import HomePage from './HomePage';
 
 const debounce = (func, delay) => {
@@ -24,8 +25,10 @@ const SearchResultsPage = () => {
   const booksPerPage = 12; // Number of books to display per page
   const [totalPages, setTotalPages] = useState(0);
   const [noResults, setNoResults] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchBooks = debounce(async (newQuery, newPage) => {
+    setIsLoading(true);
     try {
       const response = await axios.get(
         `https://openlibrary.org/search.json?q=${newQuery || query}&limit=${booksPerPage}&offset=${(newPage - 1) * booksPerPage}`
@@ -39,11 +42,21 @@ const SearchResultsPage = () => {
       setBooks([]); // Clear books if an error occurs
       setTotalPages(0);
     }
+    finally {
+      setIsLoading(false); // Set loading to false after fetching (success or error)
+    }
   }, 500);
 
   useEffect(() => {
-    fetchBooks(query, currentPage);
-  }, [query, currentPage]); // Re-fetch on query or page change
+    if (query) { 
+      fetchBooks(query, currentPage); 
+    } else {
+      // Clear results when no query is provided
+      setBooks([]); 
+      setTotalPages(0); 
+      setIsLoading(false); 
+    }
+  }, [query, currentPage]);  // Re-fetch on query or page change
 
   const handleSearch = (newQuery) => {
     setSearchParams({ q: newQuery }); // Update URL query parameter
@@ -51,19 +64,31 @@ const SearchResultsPage = () => {
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
-    fetchBooks(query, newPage); // Re-fetch for the new page
+    // fetchBooks(query, newPage); // Re-fetch for the new page
   };
 
   return (
     <div className="container mx-auto px-4 py-8">
         <div className="container mx-auto flex flex-col">
-            <img src={logo} alt="Record Reads logo" className="mt-10 w-72 h-20 ml-11 mb-20"/>
+            <img src={logo} alt="Record Reads logo" className="mt-10 w-72 h-20 sm:ml-11 mb-20 mx-auto"/>
         </div>
         <SearchBar onSearch={handleSearch} />
         <h2 className="text-2xl font-bold font-Inter mb-20 mt-16">Search Results for "{query}"</h2>
-        {noResults && (
+        {isLoading && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+          <Spinner />
+        </div>
+      )}
+        {noResults && !isLoading && ( // Check for no results and not loading
         <div className="text-black font-bold mb-48 mt-28 text-4xl font-Inter flex-col justify-center text-center mx-auto lg:w-[39rem]">
           OOPS! Looks like we don't have "{query}". Please try a different search term.
+        </div>
+        )}
+        {!isLoading && ( // Only render books if not loading
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {books.map((book) => (
+            <BookCard key={book.key} book={book} />
+          ))}
         </div>
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -71,7 +96,7 @@ const SearchResultsPage = () => {
             <BookCard key={book.key} book={book} />
             ))}
         </div>
-        {totalPages > 1 && (
+        {totalPages > 1 && !isLoading && ( // Only render pagination if not loading
             <div className="pagination mt-4 flex items-center justify-between">
             {/* pagination controls here */}
             <button onClick={() => handlePageChange(Math.max(currentPage - 1, 1))} disabled={currentPage === 1} className='bg-white hover:underline text-[#0084FF] text-xl font-Inter font-bold'>Previous</button>
