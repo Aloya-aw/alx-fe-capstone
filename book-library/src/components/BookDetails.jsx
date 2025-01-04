@@ -69,7 +69,7 @@ const BookDetails = () => {
           />
           <h2 className="sm:text-5xl text-xl font-bold mb-6 mt-4">{book.title}</h2>
           <p className="text-gray-600 sm:text-3xl text-base mb-2 sm:mb-3.5">by {book.authors?.[0]?.name || 'Unknown Author'}</p>
-          <p className="mt-4 text-gray-800 sm:text-3xl text-base mb-3 sm:mb-5">{book.description || 'No description available.'}</p>
+          <p className="mt-4 text-gray-800 sm:text-3xl text-base mb-3 sm:mb-5 dark:text-[#b1b1b3]">{book.description || 'No description available.'}</p>
           <p className="text-gray-600 text-base sm:text-3xl mb-3 sm:mb-5">ISBN: {bookId}</p>
           <p className="text-gray-600 text-base sm:text-3xl mb-3 sm:mb-5">Published: {book.publish_date || 'Unknown'}</p> 
           <p className="text-gray-500 text-base sm:text-3xl mb-3 sm:mb-5">Pages: {book.number_of_pages || 'Unknown'}</p>
