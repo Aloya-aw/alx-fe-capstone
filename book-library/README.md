@@ -1,8 +1,11 @@
-# React + Vite
+This project is my capstone project for the ALX Front-End Web Development course.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I chose to build a book library using HMTL, CSS, ReactJs, and Tailwind CSS.
 
-Currently, two official plugins are available:
+This is a basic Library which uses the Open Library API to search for books and access details about the books.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Find attached the links to the deployed site and the Figma file to view the design and prototype.
+
+Links: 
+    1. https://www.figma.com/design/O3gdRivRJkkEUEFOU9Zc2I/Capstone-Project---Book-Library?node-id=3-218&t=ZtnndNUVgA0cyYsT-0
+    2. https://www.figma.com/design/O3gdRivRJkkEUEFOU9Zc2I/Capstone-Project---Book-Library?node-id=3-218&t=ZtnndNUVgA0cyYsT-0
